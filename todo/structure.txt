@@ -1,0 +1,43 @@
+quelles infos stocker
+
+Base types
+  Nom (en,fr,de,es)
+
+m2m types types
+  fk_typeA
+  fk_typeB
+  bonus
+
+Base pokemons
+  Nom (en,fr,de,es)
+  N°pokedex
+  Classification
+  Height
+  Weight
+  Stats base ? (HP,att,def,spe,vit)
+  Stats 50 (HP,att,def,spe,vit) * pas besoin
+  Stats 100 (HP,att,def,spe,vit) * pas besoin
+  fk_typeA
+  fk_typeB
+
+Base attaques
+  Nom (en,fr,de,es)
+  fk_type
+  pp
+  base power
+  accuracy
+  description
+  type (spe, phy, other)
+  fk_effet => à trouver sur un autre site !!!
+
+m2m attack pokemon
+  fk_pokemon
+  fk_attack
+  lvl (0 si CT)
+
+Base effets
+  Nom (en,fr,de,es)
+  !!! comment on les calcule !!!
+
+Calculer la change d'un effet
+Calculer durée d'un effet
