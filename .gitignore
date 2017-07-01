@@ -1,7 +1,7 @@
-web/laravel/bootstrap
-web/laravel/storage
-web/laravel/tests
-web/laravel/vendor
+laravel/bootstrap
+laravel/storage
+laravel/tests
+laravel/vendor
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
