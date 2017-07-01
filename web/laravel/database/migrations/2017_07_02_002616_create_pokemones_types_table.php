@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePokemonstypesTable extends Migration
+class CreatePokemonsTypesTable extends Migration
 {
 
     /**
