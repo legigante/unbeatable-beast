@@ -7,3 +7,8 @@ class MyThing:
 
     def __init__(self):
         self.i = 12
+
+
+i  = MyThing
+
+i.
