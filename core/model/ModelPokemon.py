@@ -22,16 +22,18 @@ class ModelPokemon(object):
         self.type_a = None
         self.type_b = None
         # Moves of this Pokémon, Object Moves
-        # self.moves = Moves(self.pokedex)
+        moves = collections.namedtuple("moves", \
+        "name type category pp base_power accuracy effect description")
+        self.moves = [moves]
 
 
-M = ModelPokemon()
-print(M.name)
-print(M.pokedex)
-print(M.classification)
-print(M.height)
-print(M.weight)
-print(M.base.HP)
-print(M.base.ATK)
-print(M.base.DEF)
-print(M.base.SPC)
+# M = ModelPokemon()
+# print(M.name)
+# print(M.pokedex)
+# print(M.classification)
+# print(M.height)
+# print(M.weight)
+# print(M.base.HP)
+# print(M.base.ATK)
+# print(M.base.DEF)
+# print(M.base.SPC)
