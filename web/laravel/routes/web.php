@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth' ], function(){
 		Route::get('/mpdbloader/cerebii/img', ['as' => 'cerebiiImg', 'uses' => 'MPdbloaderController@cerebiiImg']);
         Route::get('/mpdbloader/cerebii/html', ['as' => 'cerebiiHtml', 'uses' => 'MPdbloaderController@cerebiiHtml']);
         Route::get('/mpdbloader/load', ['as' => 'load', 'uses' => 'MPdbloaderController@load']);
-        Route::get('/mpdbloader/loadConfirm', ['as' => 'loadConfirm', 'uses' => 'MPdbloaderController@load']);
+        Route::get('/mpdbloader/loadConfirm', ['as' => 'loadConfirm', 'uses' => 'MPdbloaderController@loadConfirm']);
 	});
 
 });
