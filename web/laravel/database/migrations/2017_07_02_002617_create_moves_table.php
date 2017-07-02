@@ -16,13 +16,13 @@ class CreateMovesTable extends Migration
 		Schema::create('moves', function(Blueprint $table)
 		{
 			$table->smallInteger('id')->unsigned()->autoIncrement();
-			$table->tinyInteger('typeID');
+			$table->tinyInteger('typeID')->unsigned();
 			$table->string('name',35)->unique();
 			$table->string('description',25);
-			$table->tinyInteger('pp');
-			$table->smallInteger('power');
-			$table->tinyInteger('accuracy');
-			$table->tinyInteger('effectPerCent');
+			$table->tinyInteger('pp')->unsigned();
+			$table->smallInteger('power')->unsigned();
+			$table->tinyInteger('accuracy')->unsigned();
+			$table->tinyInteger('effectPerCent')->unsigned();
 		});
 	}
 

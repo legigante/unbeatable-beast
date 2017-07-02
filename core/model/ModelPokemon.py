@@ -1,33 +1,43 @@
 # encoding: UTF-8
 import collections
 
+
 class ModelPokemon(object):
 
     def __init__(self):
-        # Name of Pokémon
-        self.name = "MissingNo."
-        # Pokédex Number
-        self.pokedex = -1
+        # National Pokedex Number
+        self.pokedex = None
+        # Name of Pokemon
+        self.name = "MissingNo"
+        # Species of this Pokemon
+        self.species = "M"
         # Classification, description
-        self.classification = "MissingNo. Pokémon"
-        # The height of this Pokémon
-        self.height = -1.1
-        # The weight of this Pokémon
-        self.weight = -1.1
+        self.classification = "MissingNo Pokemon"
+        # The height of this Pokemon
+        self.height = 0.0
+        # The weight of this Pokemon
+        self.weight = 0.0
         # Base stats (HP, ATK, DEF, SPA, SPD)
         stats = collections.namedtuple("stats", "HP ATK DEF SPC SPE")
-        self.base = stats(HP=-1, ATK=-1, DEF=-1, SPC=-1, SPE=-1)
-        # The Type(s) of this Pokémon. Type A is mandatory.
+        self.base = stats(HP=0, ATK=0, DEF=0, SPC=0, SPE=0)
+        # The Type(s) of this Pokemon. Type A is mandatory.
         # Type B is optional
         self.type_a = None
         self.type_b = None
-        # Moves of this Pokémon, Object Moves
-        moves = collections.namedtuple("moves", \
-        "name type category pp base_power accuracy effect description")
+        # Moves of this Pokemon, Object Moves
+        moves = collections.namedtuple("moves",
+                                       "name type category pp base_power\
+                                       accuracy effect description")
         self.moves = [moves]
 
+    def __str__(self):
 
-# M = ModelPokemon()
+        return "Pokemon: %s\nPokedex: %s\nClassification: %s" %\
+            (self.name, self.pokedex, self.classification)
+
+
+M = ModelPokemon()
+print(M)
 # print(M.name)
 # print(M.pokedex)
 # print(M.classification)
@@ -37,3 +47,4 @@ class ModelPokemon(object):
 # print(M.base.ATK)
 # print(M.base.DEF)
 # print(M.base.SPC)
+a anda
