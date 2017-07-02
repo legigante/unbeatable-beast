@@ -3,6 +3,10 @@ web/laravel/storage
 web/laravel/tests
 web/laravel/vendor
 
+# Python code to ignore:
+test/conf.py
+
+#
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
