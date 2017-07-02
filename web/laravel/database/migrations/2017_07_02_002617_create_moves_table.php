@@ -22,7 +22,10 @@ class CreateMovesTable extends Migration
 			$table->tinyInteger('pp')->unsigned();
 			$table->smallInteger('power')->unsigned();
 			$table->tinyInteger('accuracy')->unsigned();
-			$table->tinyInteger('effectPerCent')->unsigned();
+			$table->tinyInteger('effectProbability')->unsigned();
+			$table->foreign('typeID')->references('id')->on('types')
+				->onDelete('restrict')
+				->onUpdate('restrict');
 		});
 	}
 

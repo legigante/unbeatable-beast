@@ -15,6 +15,7 @@ class ModelPokemon(object):
         self.classification = "MissingNo Pokemon"
         # The height of this Pokemon
         self.height = 0.0
+
         # The weight of this Pokemon
         self.weight = 0.0
         # Base stats (HP, ATK, DEF, SPA, SPD)
@@ -47,4 +48,3 @@ print(M)
 # print(M.base.ATK)
 # print(M.base.DEF)
 # print(M.base.SPC)
-a anda
