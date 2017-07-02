@@ -11,6 +11,21 @@
 |
 */
 
+// authentification needed
+Route::group(['middleware' => 'auth' ], function(){
+
+    // load db from cerebii html files
+    Route::group(['as' => 'MPdbloader::'], function (){
+        Route::get('/mpdbloader', ['as' => 'index', 'uses' => 'MPdbloaderController@index']);
+		Route::get('/mpdbloader/cerebii', ['as' => 'cerebii', 'uses' => 'MPdbloaderController@cerebii']);
+		Route::get('/mpdbloader/cerebii/img', ['as' => 'cerebiiImg', 'uses' => 'MPdbloaderController@cerebiiImg']);
+        Route::get('/mpdbloader/cerebii/html', ['as' => 'cerebiiHtml', 'uses' => 'MPdbloaderController@cerebiiHtml']);
+        Route::get('/mpdbloader/load', ['as' => 'load', 'uses' => 'MPdbloaderController@load']);
+        Route::get('/mpdbloader/loadConfirm', ['as' => 'loadConfirm', 'uses' => 'MPdbloaderController@loadConfirm']);
+	});
+
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
