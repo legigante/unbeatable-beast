@@ -33,8 +33,8 @@ class MPfunctions{
 
 			$oReg->setOption('');
 			$poke = array();
-			$poke['num'] = $i;
-			$poke['name'] = $oReg->get('#'.str_pad($i, 3, '0', STR_PAD_LEFT).' - (.+)<\/title>');
+			$poke['pokeID'] = $i;
+			$poke['species'] = $oReg->get('#'.str_pad($i, 3, '0', STR_PAD_LEFT).' - (.+)<\/title>');
 			$poke['nameFR'] = $oReg->get('<b>French<\/b>:\s*<\/td><td>(.+?)<\/td>');
 			$poke['nameDE'] = $oReg->get('<b>German<\/b>:\s*<\/td><td>(.+?)<\/td>');
 			$poke['nameES'] = $poke['name'];
@@ -53,8 +53,8 @@ class MPfunctions{
 			$poke['baseHP'] = $oReg->matches[1][0];
 			$poke['baseATT'] = $oReg->matches[1][1];
 			$poke['baseDEF'] = $oReg->matches[1][2];
-			$poke['baseSPE'] = $oReg->matches[1][3];
-			$poke['baseVIT'] = $oReg->matches[1][4];
+			$poke['baseSPC'] = $oReg->matches[1][3];
+			$poke['baseSPE'] = $oReg->matches[1][4];
 
 			// attacks
 			$poke['attacks'] = [];
@@ -103,7 +103,7 @@ class MPfunctions{
 					$arr['accuracy'] = $matches[4];
 					$arr['pp'] = $matches[5];
 					$arr['effect'] = '?';
-					$arr['effectPerCent'] = is_numeric($matches[6]) ? $matches[6] : 0;
+					$arr['effectProbability'] = is_numeric($matches[6]) ? $matches[6] : 0;
 					$poke['attacks'][] = $arr;
 					
 					$r['types'][$arr['type']] = $arr['type'];
@@ -132,7 +132,7 @@ class MPfunctions{
 					$arr['accuracy'] = $matches[3];
 					$arr['pp'] = $matches[4];
 					$arr['effect'] = '?';
-					$arr['effectPerCent'] = is_numeric($matches[5]) ? $matches[6] : 0;
+					$arr['effectProbability'] = is_numeric($matches[5]) ? $matches[6] : 0;
 					$poke['attacks'][] = $arr;
 					
 					$r['types'][$arr['type']] = $arr['type'];
