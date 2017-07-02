@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pokemon extends Model
 {
-    protected $table = 'Pokemons';
+    protected $table = 'pokemons';
+	public $timestamps = false;
 	
 	public function types() 
 	{

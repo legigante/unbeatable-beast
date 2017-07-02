@@ -7,6 +7,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading"><h1>Cerebii<h1></div>
 					<div class="panel-body">
+						<a href="{{ route('MPdbloader::index') }}" title="Menu">Retour</a>
 						<ul>
 							<li><a href="{{ route('MPdbloader::cerebiiImg') }}" title="Import Cerebii images">Import images</a></li>
                             <li><a href="{{ route('MPdbloader::cerebiiHtml') }}" title="Import Cerebii html files">Import html files</a></li>

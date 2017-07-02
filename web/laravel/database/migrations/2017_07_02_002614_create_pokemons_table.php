@@ -18,7 +18,7 @@ class CreatePokemonsTable extends Migration
 			$table->smallInteger('id')->unsigned()->autoIncrement();
 			$table->smallInteger('num')->unsigned()->unique();
 			$table->string('name',35)->unique();
-			$table->string('description',25);
+			$table->string('description',255);
 			$table->float('height',6,2);
 			$table->float('weight',6,2);
 			$table->smallInteger('baseHP')->unsigned();

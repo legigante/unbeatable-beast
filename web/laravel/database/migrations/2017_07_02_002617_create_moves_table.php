@@ -18,7 +18,7 @@ class CreateMovesTable extends Migration
 			$table->smallInteger('id')->unsigned()->autoIncrement();
 			$table->tinyInteger('typeID')->unsigned();
 			$table->string('name',35)->unique();
-			$table->string('description',25);
+			$table->string('description',255);
 			$table->tinyInteger('pp')->unsigned();
 			$table->smallInteger('power')->unsigned();
 			$table->tinyInteger('accuracy')->unsigned();

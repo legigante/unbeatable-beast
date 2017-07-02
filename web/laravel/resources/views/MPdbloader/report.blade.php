@@ -7,9 +7,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading"><h1>{{ $report }}<h1></div>
 					<div class="panel-body">
-                        @if ($report == 'Load data confirmation')
-                            <a href="{{ route('MPdbloader::loadConfirm') }}" title="Confirmer">Click if you're sure you want to load these data to the database</a>
-                        @endif
+						<a href="{{ route('MPdbloader::index') }}" title="Menu">Retour</a>
 						<p>{{ $msg }}</p>
 					</div>
 				</div>

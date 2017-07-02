@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Move extends Model
 {
-    protected $table = 'Moves';
+    protected $table = 'moves';
+	public $timestamps = false;
 	
 	public function pokemons() 
 	{
