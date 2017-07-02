@@ -5,6 +5,7 @@ web/laravel/vendor
 
 # Python code to ignore:
 test/conf.py
+beast/properties/config.py
 
 #
 # Byte-compiled / optimized / DLL files
