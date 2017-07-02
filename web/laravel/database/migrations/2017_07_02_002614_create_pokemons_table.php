@@ -21,11 +21,11 @@ class CreatePokemonsTable extends Migration
 			$table->string('description',25);
 			$table->float('height',6,2);
 			$table->float('weight',6,2);
-			$table->smallInteger('baseHP');
-			$table->smallInteger('baseATT');
-			$table->smallInteger('baseDEF');
-			$table->smallInteger('baseSPE');
-			$table->smallInteger('baseVIT');
+			$table->smallInteger('baseHP')->unsigned();
+			$table->smallInteger('baseATT')->unsigned();
+			$table->smallInteger('baseDEF')->unsigned();
+			$table->smallInteger('baseSPE')->unsigned();
+			$table->smallInteger('baseVIT')->unsigned();
 		});
 	}
 

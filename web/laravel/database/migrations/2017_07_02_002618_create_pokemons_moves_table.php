@@ -18,7 +18,7 @@ class CreatePokemonsMovesTable extends Migration
 			$table->smallInteger('id')->unsigned()->autoIncrement();
 			$table->smallInteger('pokemonID')->unsigned();
 			$table->smallInteger('moveID')->unsigned();
-            $table->tinyInteger('level');
+            $table->tinyInteger('level')->unsigned();
 			$table->foreign('pokemonID')->references('id')->on('pokemons')
 				->onDelete('restrict')
 				->onUpdate('restrict');
