@@ -1,0 +1,15 @@
+.paginate_button{
+	background-color: #31b0d5;
+	border-color: #1b6d85;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 3px;
+	margin-left: 3px;
+}
+.paginate_button:hover{
+	background-color: #31b0f5;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+	border-color: #3b8da5;
+}

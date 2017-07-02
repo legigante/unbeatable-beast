@@ -22,7 +22,7 @@ class PokemonController extends Controller
 
     public function index()
 	{
-		$pokemon = $this->model->paginate();
+		$pokemon = $this->model->paginate(1000);
 
 	    return view('pokemon.index', [
 			'model' => $pokemon		]);
