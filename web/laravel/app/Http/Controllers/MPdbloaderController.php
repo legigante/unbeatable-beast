@@ -85,7 +85,7 @@ class MPdbloaderController extends Controller
 		}
 
 		// moves
-		$props = ['name','description','pp','power','accuracy','effectPerCent'];
+		$props = ['name','description','pp','power','accuracy','effectProbability'];
 		foreach($arr['attacks'] as $el){
 			$move = new Move;
 			foreach($props as $prop){
@@ -95,7 +95,7 @@ class MPdbloaderController extends Controller
 		}
 
 		// pokemons
-		$props = ['num','name','description','height','weight','baseHP','baseATT','baseDEF','baseSPE','baseVIT'];
+		$props = ['pokeID','species','description','height','weight','baseHP','baseATT','baseDEF','baseSPC','baseSPE'];
 		foreach($arr['poke'] as $el){
 			$poke = new Pokemon;
 			foreach($props as $prop){
@@ -133,7 +133,7 @@ class MPdbloaderController extends Controller
 			
 			
 			// moves
-			$props = ['name','description','pp','power','accuracy','effectPerCent'];
+			$props = ['name','description','pp','power','accuracy','effectProbability'];
 			foreach($arr['attacks'] as $el){
 				$move = new Move;
 				foreach($props as $prop){
@@ -145,7 +145,7 @@ class MPdbloaderController extends Controller
 			}
 			
 			// pokemons
-			$props = ['num','name','description','height','weight','baseHP','baseATT','baseDEF','baseSPE','baseVIT'];
+			$props = ['pokeID','species','description','height','weight','baseHP','baseATT','baseDEF','baseSPC','baseSPE'];
 			foreach($arr['poke'] as $el){
 				$poke = new Pokemon;
 				foreach($props as $prop){
