@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
-					<div class="panel-heading"><h1>MPdbloader<h1></div>
+					<div class="panel-heading"><h1>Cerebii<h1></div>
 					<div class="panel-body">
 						<ul>
 							<li><a href="{{ route('MPdbloader::cerebiiImg') }}" title="Import Cerebii images">Import images</a></li>

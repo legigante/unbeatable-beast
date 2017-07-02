@@ -33,7 +33,7 @@ class MPdbloaderController extends Controller
      */
     public function cerebiiImg()
     {
-		return view('MPdbloader/report', ['msg'=>'test image']);
+		return view('MPdbloader/report', ['report'=>'Import images', 'msg'=>'test image']);
     }
 
     /**
@@ -43,7 +43,7 @@ class MPdbloaderController extends Controller
      */
     public function cerebiiHtml()
     {
-		return view('MPdbloader/report', ['msg'=>'test html']);
+		return view('MPdbloader/report', ['report'=>'Import html files', 'msg'=>'test html']);
     }
 
     /**
@@ -53,7 +53,7 @@ class MPdbloaderController extends Controller
      */
     public function load()
     {
-		return view('MPdbloader/report', ['msg'=>'test load']);
+		return view('MPdbloader/report', ['report'=>'Load data confirmation', 'msg'=>'test load']);
     }
 
     /**
@@ -63,6 +63,6 @@ class MPdbloaderController extends Controller
      */
     public function loadConfirm()
     {
-		return view('MPdbloader/report', ['msg'=>'test load confirm']);
+		return view('MPdbloader/report', 'report'=>'Load data', ['msg'=>'test load confirm']);
     }
 }
