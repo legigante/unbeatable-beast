@@ -1,0 +1,14 @@
+Options -Indexes
+
+Options +FollowSymlinks
+RewriteEngine on
+	RewriteRule ^index\.html$ index.php [L]
+
+order deny,allow
+deny from all
+Allow from 2a01:e35:8a38:3ab0:5019:cde:7ccc:b2c1
+
+AuthUserFile /var/www/unbeatable-beast/web/laravel/public/test/.htpasswd
+AuthName "Accès sécurisé"
+AuthType Basic
+Require valid-user
