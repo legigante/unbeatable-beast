@@ -23,8 +23,15 @@ class MoveController extends Controller
     public function index()
 	{
 		$move = $this->model->paginate(1000);
+		
+		$types = DB::table('types')->select('id', 'name')->get();
+		$mapType = [];
+		foreach($types as $type){
+			$mapType[$type->id] = $type->name;
+		}
+		
 	    return view('move.index', [
-			'model' => $move		]);
+			'model' => $move, 'mapType'=>$mapType		]);
 	}
 
 	public function create()
@@ -48,9 +55,11 @@ class MoveController extends Controller
 	public function show($id)
 	{
 		$move = $this->model->findOrFail($id);
+		$type = $move->type()->get()[0];
+		$pokemons = $move->pokemons()->withPivot('level')->get();
 
 	    return view('move.show', [
-			'model' => $move		]);
+			'model' => $move, 'type'=>$type, 'pokemons'=>$pokemons		]);
 	}
 
 	public function edit($id)

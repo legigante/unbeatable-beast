@@ -23,6 +23,11 @@ Route::group(['middleware' => 'auth' ], function(){
         Route::get('/mpdbloader/load', ['as' => 'load', 'uses' => 'MPdbloaderController@load']);
         Route::get('/mpdbloader/loadConfirm', ['as' => 'loadConfirm', 'uses' => 'MPdbloaderController@loadConfirm']);
 	});
+	
+	
+	Route::resource('/type', 'TypeController');
+	Route::resource('/pokemon', 'PokemonController');
+	Route::resource('/move', 'MoveController');
 
 });
 
@@ -35,6 +40,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('/type', 'TypeController');
-Route::resource('/pokemon', 'PokemonController');
-Route::resource('/move', 'MoveController');
+

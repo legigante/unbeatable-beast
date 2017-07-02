@@ -48,10 +48,18 @@ class PokemonController extends Controller
 
 	public function show($id)
 	{
+		$types = DB::table('types')->select('id', 'name')->get();
+		$mapType = [];
+		foreach($types as $type){
+			$mapType[$type->id] = $type->name;
+		}
+		
 		$pokemon = $this->model->findOrFail($id);
+		$types = $pokemon->types()->get();
+		$moves = $pokemon->moves()->withPivot('level')->get();
 
 	    return view('pokemon.show', [
-			'model' => $pokemon		]);
+			'model' => $pokemon, 'types' => $types, 'moves' => $moves, 'mapType'=>$mapType		]);
 	}
 
 	public function edit($id)
