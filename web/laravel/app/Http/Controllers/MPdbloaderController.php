@@ -33,7 +33,11 @@ class MPdbloaderController extends Controller
      */
     public function cerebiiImg()
     {
-		return view('MPdbloader/report', ['report'=>'Import images', 'msg'=>'test image']);
+		if(auth()->user()->name == 'moussa'){
+			return view('MPdbloader/report', ['report'=>'Import images', 'msg'=>'test image']);
+		}else{
+			return view('MPdbloader/error', ['errDesc'=>'Vous devez être moussa pour effectuer cette action']);
+		}
     }
 
     /**
@@ -43,7 +47,11 @@ class MPdbloaderController extends Controller
      */
     public function cerebiiHtml()
     {
-		return view('MPdbloader/report', ['report'=>'Import html files', 'msg'=>'test html']);
+		if(auth()->user()->name == 'moussa'){
+			return view('MPdbloader/report', ['report'=>'Import html files', 'msg'=>'test html']);
+		}else{
+			return view('MPdbloader/error', ['errDesc'=>'Vous devez être moussa pour effectuer cette action']);
+		}
     }
 
     /**
@@ -63,6 +71,11 @@ class MPdbloaderController extends Controller
      */
     public function loadConfirm()
     {
-		return view('MPdbloader/report', ['report'=>'Load data', 'msg'=>'test load confirm']);
+		if(auth()->user()->name == 'moussa'){
+			return view('MPdbloader/report', ['report'=>'Load data', 'msg'=>'test load confirm']);
+		}else{
+			return view('MPdbloader/error', ['errDesc'=>'Vous devez être moussa pour effectuer cette action']);
+		}
+		
     }
 }
