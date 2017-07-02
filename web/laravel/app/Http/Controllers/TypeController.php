@@ -22,7 +22,7 @@ class TypeController extends Controller
 
     public function index()
 	{
-		$type = $this->model->paginate();
+		$type = $this->model->paginate(1000);
 
 	    return view('type.index', [
 			'model' => $type		]);

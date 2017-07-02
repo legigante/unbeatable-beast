@@ -22,8 +22,7 @@ class MoveController extends Controller
 
     public function index()
 	{
-		$move = $this->model->paginate();
-
+		$move = $this->model->paginate(1000);
 	    return view('move.index', [
 			'model' => $move		]);
 	}
