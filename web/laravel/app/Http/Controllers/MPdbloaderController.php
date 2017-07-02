@@ -63,6 +63,6 @@ class MPdbloaderController extends Controller
      */
     public function loadConfirm()
     {
-		return view('MPdbloader/report', 'report'=>'Load data', ['msg'=>'test load confirm']);
+		return view('MPdbloader/report', ['report'=>'Load data', 'msg'=>'test load confirm']);
     }
 }
