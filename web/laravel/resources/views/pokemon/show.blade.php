@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.crud')
 
 @section('content')
 
@@ -9,19 +9,6 @@
         <i class="glyphicon glyphicon-th-list"></i>
         List of {{ ucfirst('pokemons') }}
     </a>
-    <!--<a href="{{url('pokemon/create')}}" class="btn btn-primary btn-sm" role="button">
-        <i class="glyphicon glyphicon-plus"></i>
-        Create {{ ucfirst('Pokemon') }}
-    </a>
-    <a href="{{route('pokemon.edit', [$model->id])}}" class="btn btn-warning btn-sm" role="button">
-        <i class="glyphicon glyphicon-pencil"></i>
-        Update {{ ucfirst('Pokemon') }}
-    </a>
-    <a href="{{route('pokemon.destroy', [$model->id])}}" class="btn btn-danger btn-sm" role="button"
-       onclick="return doDelete({!! $model->id !!})">
-        <i class="glyphicon glyphicon-remove"></i>
-        Delete {{ ucfirst('Pokemon') }}
-    </a>-->
 </div>
 <div class="clearfix"><div/>
 <br/>
@@ -33,6 +20,8 @@
     <div class="panel-body">
 
         {!! Form::model($model, ['url' => 'pokemon', 'class' => 'form-horizontal']) !!}
+		
+		<img style="display: block; margin: auto;" src="/img/pokemon/{{ $model->id }}.png">
 
                 
         <div class="form-group">
@@ -69,7 +58,22 @@
                                                                                                 
             </div>
         </div>
-        
+		
+		@foreach ($types as $type)
+			<div class="form-group">
+				{!! Form::label('Type', 'Type:', ['class' => 'col-sm-3 control-label']) !!}
+				<div class="col-sm-6">
+					{!! Form::text('Type', $type->name, ['class' => 'form-control', 'readonly' => 'readonly'])!!}                                                                           
+				</div>
+					<div class="btn-group" role="group">
+					  <a href="{{route('type.show', [$type->id])}}" class="btn btn-info btn-sm" role="button">
+						  <i class="glyphicon glyphicon-zoom-in"></i>
+						  Details
+					  </a>
+					 </div>
+			</div>
+
+		@endforeach
                 
         <div class="form-group">
             {!! Form::label('height', 'Height:', ['class' => 'col-sm-3 control-label']) !!}
@@ -133,32 +137,56 @@
             </div>
         </div>
         
-        
         {!! Form::close() !!}
+		
+		<h2>Moves</h2>
+		
+        <div class="">
+            <table class="table table-striped" id="tbl-datatable">
+              <thead>
+                <tr>
+                                    <th>TypeID</th>
+                                    <th>Name</th>
+									<th>Level</th>
+                                    <th>Description</th>
+                                    <th>Pp</th>
+                                    <th>Power</th>
+                                    <th>Accuracy</th>
+                                    <th>EffectProbability</th>
+                                    <th style="width:200px"></th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($moves as $obj)
+                <tr>
+                                        <td><a href="{{route('type.show', [$obj->typeID])}}">{{ $mapType[$obj->typeID] }}</a></td>
+                                        <td><a href="{{route('move.show', [$obj->id])}}">{{ $obj->name }}</a></td>
+										<td>{{ $obj->pivot->level }}</td>
+                                        <td>{{ $obj->description }}</td>
+                                        <td>{{ $obj->pp }}</td>
+                                        <td>{{ $obj->power }}</td>
+                                        <td>{{ $obj->accuracy }}</td>
+                                        <td>{{ $obj->effectProbability }}</td>
+                                        <td>
+                        <div class="btn-group" role="group">
+                          <a href="{{route('move.show', [$obj->id])}}"
+                             class="btn btn-info btn-sm" role="button">
+                              <i class="glyphicon glyphicon-zoom-in"></i>
+                              Details
+                          </a>
+                        </div>
+                    </td>
+                </tr>
+              @endforeach
+              </tbody>
+            </table>
+        </div>
+		
+		
+		
+
 
     </div>
 </div>
-
-@endsection
-
-@section('scripts')
-
-<script type="text/javascript">
-    function doDelete(id) {
-        if(confirm('Do you really want to delete this record?')) {
-            $.ajax({
-                url: '{{ url('/pokemon') }}/' + id,
-                type: 'DELETE',
-                success: function() {
-                    window.location.reload();
-                },
-                error: function() {
-                    alert('Woops! Something went wrong. Internal error.');
-                }
-            });
-        }
-        return false;
-    }
-</script>
 
 @endsection

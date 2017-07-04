@@ -24,6 +24,7 @@ class TypeController extends Controller
 	{
 		$type = $this->model->paginate(1000);
 
+		
 	    return view('type.index', [
 			'model' => $type		]);
 	}
@@ -48,10 +49,18 @@ class TypeController extends Controller
 
 	public function show($id)
 	{
+		$types = DB::table('types')->select('id', 'name')->get();
+		$mapType = [];
+		foreach($types as $type){
+			$mapType[$type->id] = $type->name;
+		}
+		
 		$type = $this->model->findOrFail($id);
+		$moves = $type->moves()->get();
+		$pokemons = $type->pokemons()->get();
 
 	    return view('type.show', [
-			'model' => $type		]);
+			'model' => $type, 'moves'=>$moves, 'pokemons'=>$pokemons, 'mapType'=>$mapType		]);
 	}
 
 	public function edit($id)
