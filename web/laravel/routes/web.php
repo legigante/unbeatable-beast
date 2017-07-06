@@ -22,6 +22,21 @@ Route::group(['middleware' => 'auth' ], function(){
         Route::get('/mpdbloader/cerebii/html', ['as' => 'cerebiiHtml', 'uses' => 'MPdbloaderController@cerebiiHtml']);
         Route::get('/mpdbloader/load', ['as' => 'load', 'uses' => 'MPdbloaderController@load']);
         Route::get('/mpdbloader/loadConfirm', ['as' => 'loadConfirm', 'uses' => 'MPdbloaderController@loadConfirm']);
+		Route::get('/mpdbloader/script', ['as' => 'script', 'uses' => 'MPdbloaderController@script']);
+	});
+	
+	Route::group(['as' => 'users::'], function (){
+		Route::get('/users', ['as' => 'index', 'uses' => 'UserController@index']);
+		Route::get('/users/{id}', ['as' => 'show', 'uses' => 'UserController@show'])->where('id', '[0-9]+');
+	});
+	
+	Route::resource('/type', 'TypeController');
+	Route::resource('/pokemon', 'PokemonController');
+	Route::resource('/move', 'MoveController');
+	
+	Route::group(['as' => 'test::'], function (){
+		Route::get('test/pokemon/{id}/{lvl}', ['as' => 'api', 'uses' => 'TestController@api'])->where('id', '[0-9]+');
+		Route::get('test/pokemon2/{id}/{lvl}', ['as' => 'api', 'uses' => 'TestController@api2'])->where('id', '[0-9]+');
 	});
 
 });
@@ -35,6 +50,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('/type', 'TypeController');
-Route::resource('/pokemon', 'PokemonController');
-Route::resource('/move', 'MoveController');
+

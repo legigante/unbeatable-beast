@@ -1,5 +1,10 @@
 <?php
 
+
+// !!!!!!!!!!!!!!!!!! GERER LES DOUBLONS DE MOVES
+
+
+
 namespace App\MPmisc;
 
 
@@ -37,7 +42,7 @@ class MPfunctions{
 			$poke['species'] = $oReg->get('#'.str_pad($i, 3, '0', STR_PAD_LEFT).' - (.+)<\/title>');
 			$poke['nameFR'] = $oReg->get('<b>French<\/b>:\s*<\/td><td>(.+?)<\/td>');
 			$poke['nameDE'] = $oReg->get('<b>German<\/b>:\s*<\/td><td>(.+?)<\/td>');
-			$poke['nameES'] = $poke['name'];
+			$poke['nameES'] = $poke['species'];
 			$oReg->setOption('g');
 			$oReg->getBetween('pokedex\/(.+?)\.','<td class="fooinfo">#'.str_pad($i, 3, '0', STR_PAD_LEFT).'</td>','</tr>');
 			$poke['typeA'] = $oReg->matches[1][0];
@@ -73,7 +78,6 @@ class MPfunctions{
 				$arrAtt = $oReg->splitBetween('<\/tr>','<th class="attheader">Effect %</th></tr>','TM & HM Attacks');
 			}
 			
-			
 
 			
 			
@@ -107,11 +111,16 @@ class MPfunctions{
 					$poke['attacks'][] = $arr;
 					
 					$r['types'][$arr['type']] = $arr['type'];
-					$r['attacks'][$arr['name']] = $arr;
 				}else{
 					if(count($matches)==1){
-						$arr['description'] = $matches[0];
-						$r['attacks'][$arr['name']] = $arr;
+						if(isset($r['attacks'][$arr['name']]) == false){
+							$arr['description'] = $matches[0];
+							$r['attacks'][$arr['name']] = $arr;
+						}else{
+							if($r['attacks'][$arr['name']]['level'] > $arr['level']){
+								$r['attacks'][$arr['name']]['level'] = $arr['level'];
+							}
+						}
 					}
 				}
 			}
@@ -136,11 +145,16 @@ class MPfunctions{
 					$poke['attacks'][] = $arr;
 					
 					$r['types'][$arr['type']] = $arr['type'];
-					$r['attacks'][$arr['name']] = $arr;
 				}else{
 					if(count($matches)==1){
-						$arr['description'] = $matches[0];
-						$r['attacks'][$arr['name']] = $arr;
+						if(isset($r['attacks'][$arr['name']]) == false){
+							$arr['description'] = $matches[0];
+							$r['attacks'][$arr['name']] = $arr;
+						}else{
+							if($r['attacks'][$arr['name']]['level'] > $arr['level']){
+								$r['attacks'][$arr['name']]['level'] = $arr['level'];
+							}
+						}
 					}
 				}
 			}

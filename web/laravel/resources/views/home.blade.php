@@ -9,6 +9,13 @@
 
                 <div class="panel-body">
                     You are logged in!
+					<h2>Le menu dégueulasse</h2>
+					<ul>
+						<li><a href="/pokemon">Pokemons</a></li>
+						<li><a href="/move">Moves</a></li>
+						<li><a href="/type">Types</a></li>
+						<li><a href="/users">Users</a></li>
+					</ul>
                 </div>
             </div>
         </div>

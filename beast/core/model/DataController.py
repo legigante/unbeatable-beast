@@ -1,6 +1,7 @@
 # encoding: UTF-8
 import mysql.connector
-from unbeable\- beast.properties import config
+from beast.properties import config
+
 cnx = mysql.connector.connect(**c.connector)
 
 cursor = cnx.cursor()
