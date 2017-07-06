@@ -36,7 +36,7 @@
         <div class="form-group">
             {!! Form::label('pokeID', 'PokeID:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                                    {!! Form::number('pokeID', $model->pokeID, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                                    {!! Form::text('pokeID', $model->pokeID, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
                                                                                 
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="form-group">
             {!! Form::label('description', 'Description:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                    {!! Form::text('description', $model->description, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                    {!! Form::textarea('description', $model->description, ['class' => 'form-control', 'readonly' => 'readonly', 'size' => '30x2'])!!}
                                                                                                 
             </div>
         </div>
@@ -96,7 +96,7 @@
         <div class="form-group">
             {!! Form::label('baseHP', 'BaseHP:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                                    {!! Form::number('baseHP', $model->baseHP, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                                    {!! Form::text('baseHP', $model->baseHP, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
                                                                                 
             </div>
         </div>
@@ -105,7 +105,7 @@
         <div class="form-group">
             {!! Form::label('baseATT', 'BaseATT:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                                    {!! Form::number('baseATT', $model->baseATT, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                                    {!! Form::text('baseATT', $model->baseATT, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
                                                                                 
             </div>
         </div>
@@ -114,7 +114,7 @@
         <div class="form-group">
             {!! Form::label('baseDEF', 'BaseDEF:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                                    {!! Form::number('baseDEF', $model->baseDEF, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                                    {!! Form::text('baseDEF', $model->baseDEF, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
                                                                                 
             </div>
         </div>
@@ -123,7 +123,7 @@
         <div class="form-group">
             {!! Form::label('baseSPC', 'BaseSPC:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                                    {!! Form::number('baseSPC', $model->baseSPC, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                                    {!! Form::text('baseSPC', $model->baseSPC, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
                                                                                 
             </div>
         </div>
@@ -132,7 +132,7 @@
         <div class="form-group">
             {!! Form::label('baseSPE', 'BaseSPE:', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                                                                    {!! Form::number('baseSPE', $model->baseSPE, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
+                                                                    {!! Form::text('baseSPE', $model->baseSPE, ['class' => 'form-control', 'readonly' => 'readonly'])!!}
                                                                                 
             </div>
         </div>

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
 			$table->string('email',100)->unique();
 			$table->string('rank',25)->default('');
 			$table->string('qualifier',25)->default('');
-			$table->boolean('active')->default(false);
+			$table->boolean('admin')->default(false);
 			$table->string('password', 60);
 			$table->rememberToken();
 			$table->timestamps();

@@ -104,7 +104,7 @@
               <tbody>
               @foreach($pokemons as $obj)
                 <tr>
-                                        <td>{{ $obj->pokeID }}</td>
+                                        <td>{{ $obj->pokeID }}<img style="display: inline; margin-left: 5px; height: 30px;" src="/img/pokemon/{{ $obj->id }}.png"></td>
                                         <td><a href="{{route('pokemon.show', [$obj->id])}}">{{ $obj->species }}</a></td>
                                         <td>{{ $obj->description }}</td>
                                         <td>{{ $obj->height }}</td>

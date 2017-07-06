@@ -10,9 +10,45 @@ use App\MPmisc\MPfunctions;
 use App\Type;
 use App\Move;
 use App\Pokemon;
+use DB;
 
 class MPdbloaderController extends Controller
 {
+	
+	
+	/**
+	 * Scripts dégueulasses
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function script()
+    {
+		$i = 1;
+		while($i < 20){
+			$k = 1;
+			while($k <20){
+				$rs = DB::table('pokemons_moves')->where([['pokemonID','=',$i],['moveID','=',$k]])->orderBy('moveID')->get();
+				
+				$j = 1;
+				foreach($rs as $dup){
+					if($j > 1){
+						var_dump('i'.$dup->id);
+						var_dump('p'.$dup->pokemonID);
+						var_dump('m'.$dup->moveID);
+						var_dump('l'.$dup->level);
+						echo '<br /><br />';
+					}
+					$j++;
+				}
+				$k++;
+			}
+			$i++;
+		}
+		echo 'ok';
+
+    }
+	
+	
     /**
      * Main menu.
      *

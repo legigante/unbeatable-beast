@@ -13,3 +13,9 @@
 	cursor: pointer;
 	border-color: #3b8da5;
 }
+
+
+#tbl-datatable td,
+#tbl-datatable2 td{
+	vertical-align: middle;
+}
