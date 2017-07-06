@@ -16,6 +16,9 @@
 						<li><a href="/type">Types</a></li>
 						<li><a href="/users">Users</a></li>
 					</ul>
+
+                    <h2>test</h2>
+                    
                 </div>
             </div>
         </div>
