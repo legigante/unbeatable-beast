@@ -35,21 +35,3 @@ class ModelPokemon(object):
 
         return "Pokemon: %s\nPokedex: %s\nClassification: %s" %\
             (self.name, self.pokedex, self.classification)
-
-    @classmethod
-    def species(cls, spe):
-        poke = cls()
-        poke.pokex =
-
-
-M = ModelPokemon()
-print(M)
-# print(M.name)
-# print(M.pokedex)
-# print(M.classification)
-# print(M.height)
-# print(M.weight)
-# print(M.base.HP)
-# print(M.base.ATK)
-# print(M.base.DEF)
-# print(M.base.SPC)
